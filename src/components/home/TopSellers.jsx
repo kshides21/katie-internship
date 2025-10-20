@@ -17,11 +17,12 @@ const TopSellers = () => {
         setSellers(data);
       } catch (error) {
         console.error("Error fetching data", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchSellers();
-    setLoading(false);
   }, []);
 
   return (

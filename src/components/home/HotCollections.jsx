@@ -63,11 +63,12 @@ const HotCollections = () => {
         setHotCollections(data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchHotCollection();
-    setLoading(false);
   }, []);
 
   return (

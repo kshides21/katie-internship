@@ -91,11 +91,12 @@ const NewItems = () => {
         setNewItems(data);
       } catch (error) {
         console.error("Error fetching data", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchNewItems();
-    setLoading(false);
   }, []);
 
   return (
