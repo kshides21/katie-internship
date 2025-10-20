@@ -53,7 +53,6 @@ const HotCollections = () => {
   const [hotCollections, setHotCollections] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  //fetch Hot Collection data from API
   useEffect(() => {
     const fetchHotCollection = async () => {
       setLoading(true);
@@ -81,28 +80,29 @@ const HotCollections = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
+          <div className="list__container">
           {loading ? (
             <div className="skeleton-slider-wrapper">
-              <div className="skeleton__arrow prev"></div>
               <Slider {...settings}>
-                {new Array(4).fill(0).map((_, index) => (
-                  <div className="p-2" key={index}>
-                    <div className="nft_coll">
-                      <div className="skeleton__nft_wrap nft_wrap">
-                        <div className="skeleton__background--img"></div>
-                      </div>
-                      <div className="nft_coll_pp skeleton__author-bubble">
-                        <i className="fa fa-check skeleton__check"></i>
-                      </div>
-                      <div className="nft_coll_info skeleton__info">
-                        <h4 className="skeleton__name"></h4>
-                        <span className="skeleton__code"></span>
+                {Array(4)
+                  .fill(0)
+                  .map((_, index) => (
+                    <div className="p-2" key={index}>
+                      <div className="nft_coll">
+                        <div className="skeleton__nft_wrap nft_wrap">
+                          <div className="skeleton skeleton__background--img"></div>
+                        </div>
+                        <div className="nft_coll_pp">
+                          <div className="skeleton skeleton__author-bubble skeleton--circle"></div>
+                        </div>
+                        <div className="nft_coll_info skeleton__info">
+                          <div className="skeleton skeleton__name skeleton--text"></div>
+                          <div className="skeleton skeleton__code skeleton--text"></div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </Slider>
-              <div className="skeleton__arrow next"></div>
             </div>
           ) : (
             <Slider {...settings}>
@@ -139,6 +139,7 @@ const HotCollections = () => {
               ))}
             </Slider>
           )}
+          </div>
         </div>
       </div>
     </section>

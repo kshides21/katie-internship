@@ -1,0 +1,45 @@
+@import "./SkeletonBase.css";
+
+.slick-slide {
+  width: 100%;
+  position: relative;
+}
+
+.nft_item {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.nft_item:hover {
+  transform: translateY(-5px);
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #333;
+}
+
+.newitems__skeleton-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+}
+
+.newitems__skeleton__background--img {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+}
+
+.newitems__skeleton__author-bubble {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: -20px;
+  margin-left: 10px;
+  background: #eee;
+}
