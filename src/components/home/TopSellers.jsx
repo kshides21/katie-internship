@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "../../css/components/TopSellers.css";
 
 const TopSellers = () => {
   const [sellers, setSellers] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchSellers = async () => {
@@ -35,24 +36,42 @@ const TopSellers = () => {
           </div>
           <div className="col-md-12">
             <ol className="author_list">
-              {sellers.map((data, index) => (
-                <li key={index}>
-                  <div className="author_list_pp">
-                    <Link to={`/author/${data.authorId}`}>
-                      <img
-                        className="lazy pp-author"
-                        src={data.authorImage}
-                        alt=""
-                      />
-                      <i className="fa fa-check"></i>
-                    </Link>
-                  </div>
-                  <div className="author_list_info">
-                    <Link to={`/author/${data.authorId}`}>{data.authorName}</Link>
-                    <span>{data.price} ETH</span>
-                  </div>
-                </li>
-              ))}
+              {loading
+                ? new Array(12).fill(0).map((_, index) => (
+                    <li key={index}>
+                      <div className="author_list_pp skeleton top-sellers__skeleton__author-bubble"></div>
+                      <div className="author_list_info">
+                        <div
+                        className="skeleton skeleton--text"
+                        style={{ width: "60%", height: "14px"}}
+                        ></div>
+                        <div
+                          className="skeleton skeleton--text"
+                          style={{ width: "20%", height: "14px" }}
+                        ></div>
+                      </div>
+                    </li>
+                  ))
+                : sellers.map((data, index) => (
+                    <li key={index}>
+                      <div className="author_list_pp">
+                        <Link to={`/author/${data.authorId}`}>
+                          <img
+                            className="lazy pp-author"
+                            src={data.authorImage}
+                            alt=""
+                          />
+                          <i className="fa fa-check"></i>
+                        </Link>
+                      </div>
+                      <div className="author_list_info">
+                        <Link to={`/author/${data.authorId}`}>
+                          {data.authorName}
+                        </Link>
+                        <span>{data.price} ETH</span>
+                      </div>
+                    </li>
+                  ))}
             </ol>
           </div>
         </div>
