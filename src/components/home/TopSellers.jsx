@@ -43,8 +43,8 @@ const TopSellers = () => {
                       <div className="author_list_pp skeleton top-sellers__skeleton__author-bubble"></div>
                       <div className="author_list_info">
                         <div
-                        className="skeleton skeleton--text"
-                        style={{ width: "60%", height: "14px"}}
+                          className="skeleton skeleton--text"
+                          style={{ width: "60%", height: "14px" }}
                         ></div>
                         <div
                           className="skeleton skeleton--text"
@@ -56,7 +56,11 @@ const TopSellers = () => {
                 : sellers.map((data, index) => (
                     <li key={index}>
                       <div className="author_list_pp">
-                        <Link to={`/author/${data.authorId}`}>
+                        <Link
+                          to={`/author/${data.authorId}`}
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                        >
                           <img
                             className="lazy pp-author"
                             src={data.authorImage}
@@ -66,7 +70,11 @@ const TopSellers = () => {
                         </Link>
                       </div>
                       <div className="author_list_info">
-                        <Link to={`/author/${data.authorId}`}>
+                        <Link
+                          to={`/author/${data.authorId}`}
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                        >
                           {data.authorName}
                         </Link>
                         <span>{data.price} ETH</span>

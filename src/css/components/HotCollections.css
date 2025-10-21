@@ -128,4 +128,17 @@
   .custom-arrow.next {
     right: -10px;
   }
+
+  .hide-component{
+    visibility: hidden;
+  }
+
+  .d_profile .de-flex-col {
+      display: flex;
+  }
+
+  .profile_username {
+    text-align: left;
+  }
+
 }
