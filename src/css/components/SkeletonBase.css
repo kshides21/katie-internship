@@ -23,3 +23,26 @@
   width: 100%;
   margin-bottom: 0.5rem;
 }
+
+.skeleton-explore__wrapper {
+  width: 25%;
+}
+
+@media (max-width: 1156px) {
+  .skeleton-explore__wrapper{
+    width: 33%;
+  }
+}
+
+@media (max-width: 992px) {
+  .skeleton-explore__wrapper{
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .skeleton-explore__wrapper{
+    width: 100%;
+    max-width: 420px;
+  }
+}
