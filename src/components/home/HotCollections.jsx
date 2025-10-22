@@ -7,6 +7,23 @@ import "../../css/components/HotCollections.css";
 import Slider from "react-slick";
 
 const HotCollections = () => {
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+  useEffect(() => {
+    const updateSlidesToShow = () => {
+      const width = window.innerWidth;
+      if (width < 576) setSlidesToShow(1);
+      else if (width < 992) setSlidesToShow(2);
+      else if (width < 1156) setSlidesToShow(3);
+      else setSlidesToShow(4);
+    };
+
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
+
+    return () => window.removeEventListener("resize", updateSlidesToShow);
+  }, []);
+
   const NextArrow = ({ onClick }) => (
     <div className="custom-arrow next" onClick={onClick}>
       <i className="fa fa-chevron-right"></i>
@@ -22,7 +39,7 @@ const HotCollections = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow,
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <NextArrow />,
