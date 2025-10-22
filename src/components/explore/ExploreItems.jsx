@@ -95,6 +95,7 @@ const ExploreItems = () => {
       <div className="col-md-12 text-center">
         {visibleData < exploreItems.length && (
           <Link
+            data-aos="fade-in" data-aos-delay="100"
             onClick={handleLoadMore}
             to=""
             id="loadmore"
