@@ -31,7 +31,7 @@ const ItemDetails = () => {
   }, [id]);
 
   return (
-    <div id="wrapper">
+    <div data-aos="fade-in" data-aos-delay="300" id="wrapper">
       <div className="no-bottom no-top" id="content">
         <div id="top"></div>
         <section aria-label="section" className="mt90 sm-mt-0">

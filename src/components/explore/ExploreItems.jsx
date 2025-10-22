@@ -50,9 +50,10 @@ const ExploreItems = () => {
         </select>
       </div>
       {loading
-        ? <LoadingSkeleton />
+        ? <LoadingSkeleton data-aos="fade-in" data-aos-delay="200" />
         : slicedData.map((data, index) => (
             <div
+            data-aos="fade-in" data-aos-delay="200"
               key={index}
               className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
               style={{ display: "block", backgroundSize: "cover" }}
@@ -95,6 +96,7 @@ const ExploreItems = () => {
       <div className="col-md-12 text-center">
         {visibleData < exploreItems.length && (
           <Link
+            data-aos="fade-in" data-aos-delay="100"
             onClick={handleLoadMore}
             to=""
             id="loadmore"

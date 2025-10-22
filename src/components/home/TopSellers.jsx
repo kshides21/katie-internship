@@ -27,10 +27,10 @@ const TopSellers = () => {
 
   return (
     <section id="section-popular" className="pb-5">
-      <div className="container">
+      <div data-aos="fade-up" data-aos-delay="250" className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div data-aos="fade-up" data-aos-delay="100" className="text-center">
               <h2>Top Sellers</h2>
               <div className="small-border bg-color-2"></div>
             </div>

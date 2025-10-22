@@ -8,10 +8,10 @@ const AuthorItems = ({ authorItems = [], authorImage, loading }) => {
       <div className="tab-1">
         <div className="row">
           {loading ? (
-            <LoadingSkeleton />
+            <LoadingSkeleton data-aos="fade-in" data-aos-delay="200" />
           ) : (
             authorItems.map((data, index) => (
-              <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={index}>
+              <div data-aos="fade-in" data-aos-delay="200" className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={index}>
                 <div className="nft__item">
                   <div className="author_list_pp">
                     <a href="#">
