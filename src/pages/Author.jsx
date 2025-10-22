@@ -80,7 +80,7 @@ const Author = () => {
                   </div>
                 ) : (
                   <div className="d_profile de-flex">
-                    <div className="de-flex-col">
+                    <div data-aos="fade-up" data-aos-delay="150" className="de-flex-col">
                       <div className="profile_avatar">
                         <img src={author.authorImage} alt="" />
 
