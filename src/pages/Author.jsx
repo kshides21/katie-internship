@@ -5,6 +5,10 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const Author = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   const [author, setAuthor] = useState([]);
   const [loading, setLoading] = useState(false);
   const [following, setFollowing] = useState(false);
