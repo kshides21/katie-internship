@@ -26,7 +26,7 @@ const ItemDetails = () => {
         setLoading(false);
       }
     };
-    
+
     fetchItemDetails();
   }, [id]);
 
@@ -36,7 +36,62 @@ const ItemDetails = () => {
         <div id="top"></div>
         <section aria-label="section" className="mt90 sm-mt-0">
           <div className="container">
-            <div className="row">
+            { loading ? 
+            (<div className="row">
+              <div className="col-md-6 text-center skeleton">
+              </div>
+              <div className="col-md-6">
+                <div className="item_info">
+                  <div className="skeleton skeleton-text"
+                  style={{ width: "320px", height: "32px", marginTop: "12px"}}></div>
+                  <div className="item_info_counts">
+                    <div className="item_info_views skeleton skeleton-text"
+                    style={{ width: "36px", height: "28px", marginTop: "16px"}}>
+                    </div>
+                    <div className="item_info_like skeleton skeleton-text"
+                    style={{ width: "36px", height: "28px", marginTop: "16px"}}>
+                    </div>
+                  </div>
+                  <div className="skeleton skeleton-text"
+                  style={{ width: "444px", height: "120px", marginBottom: "16px"}}>
+                  </div>
+                  <div className="d-flex flex-row">
+                    <div className="mr40">
+                      <h6>Owner</h6>
+                      <div className="item_author">
+                        <div className="author_list_pp skeleton"
+                        style={{ width: "60px", height: "60px", borderRadius: "50%"}}>
+                        </div>
+                        <div className="author_list_info skeleton skeleton-text"
+                        style={{ width: "88px", height: "16px", margin: "16px", marginLeft: "72px"}}>
+                        </div>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div className="de_tab tab_simple">
+                    <div className="de_tab_content">
+                      <h6>Creator</h6>
+                      <div className="item_author">
+                        <div className="author_list_pp skeleton"
+                        style={{ width: "60px", height: "60px", borderRadius: "50%"}}>
+                        </div>
+                        <div className="author_list_info skeleton skeleton-text"
+                        style={{ width: "88px", height: "16px", margin: "16px", marginLeft: "72px"}}>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="spacer-40"></div>
+                    <h6>Price</h6>
+                    <div className="nft-item-price skeleton skeleton-text"
+                    style={{ width: "80px", height: "24px"}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>)
+            :
+            (<div className="row">
               <div className="col-md-6 text-center">
                 <img
                   src={itemDetails.nftImage}
@@ -102,7 +157,7 @@ const ItemDetails = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>)}
           </div>
         </section>
       </div>
