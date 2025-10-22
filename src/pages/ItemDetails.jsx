@@ -7,6 +7,7 @@ const ItemDetails = () => {
   useEffect(() => {
     //commenting test
     window.scrollTo(0, 0);
+    //testing main comment
   }, []);
 
   const [itemDetails, setItemDetails] = useState([]);
