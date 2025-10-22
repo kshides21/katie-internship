@@ -5,7 +5,7 @@ import axios from "axios";
 
 const ItemDetails = () => {
   useEffect(() => {
-    //commenting test
+    //commenting testing
     window.scrollTo(0, 0);
     //testing main comment
   }, []);
