@@ -6,7 +6,6 @@ import axios from "axios";
 const ItemDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    //testing main comment
   }, []);
 
   const [itemDetails, setItemDetails] = useState([]);
